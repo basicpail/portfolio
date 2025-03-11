@@ -568,6 +568,11 @@ iframe {
   .home__title {
     margin-top: var(--ms-3);
   }
+
+  .home__data {
+    flex-direction: column;
+    align-items: center;
+  }
   .home__social {
     justify-content: center;
   }
