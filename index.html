@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- JavaScript -->
+    <script src="src/main.js" defer></script>
+
+    <!-- ---------------------------- Font Awesome ----------------------------- -->
+    <script
+      src="https://kit.fontawesome.com/45976df4cd.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ---------------------------- ScrollReveal ----------------------------- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ------------------------------- Typeit -------------------------------- -->
+    <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
+
+    <title>SSG 소개 페이지</title>
+
+    <!-- 메타 설명 태그 -->
+    <meta name="description" content="안녕하세요. 개발자 송상근 입니다." />
+    <!-- 저자 메타태그 -->
+    <meta name="author" content="송상근" />
+    <!-- 키워드 메타태그 (검색 엔진에 의해 무시될 수 있지만 일부 엔진에서 사용될 수 있음) -->
+    <meta
+      name="keywords"
+      content="웹 개발, 앱 개발, 프론트엔드, 백엔드, 임베디드, IoT"
+    />
+
+    <!-- Open Graph 메타태그 (Facebook 등 소셜 미디어에서 링크 공유시에 사용됨) -->
+    <meta property="og:title" content="개발자 송상근의 포트폴리오 페이지" />
+    <meta
+      property="og:description"
+      content="송상근의 포트폴리오입니다. 주로 웹/모바일 앱과 IoT 개발을 하고 있습니다."
+    />
+    <meta
+      property="og:image"
+      content="https://yourwebsite.com/images/og-image.jpg"
+    />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter 카드 메타태그 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="송상근의 포트폴리오" />
+    <meta
+      name="twitter:description"
+      content="송상근의 웹 개발 포트폴리오입니다. 주로 프론트엔드 개발과 백엔드 개발을 다룹니다."
+    />
+    <meta
+      name="twitter:image"
+      content="https://yourwebsite.com/images/og-image.jpg"
+    />
+
+    <style>
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin: 5px 0;
+      }
+      .company__header {
+        display: flex; /* h2와 아이콘을 한 줄로 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
+        gap: 8px; /* 아이콘과 h2 사이 간격 */
+      }
+
+      .company__icon {
+        width: 100px; /* 아이콘 크기 */
+        height: 100px; /* 아이콘 크기 */
+        margin-right: 8px;
+        border-radius: 50%;
+        object-fit: contain; /* 이미지 비율 유지 */
+      }
+      .company {
+        font-weight: bolder;
+        font-size: larger;
+      }
+      .project {
+        line-height: 1.5;
+      }
+      .projectDescription {
+        padding-left: 20px;
+        font-weight: 500;
+        color: #343a40;
+        line-height: 1.4;
+      }
+      .projectStack {
+        padding-left: 20px;
+        font-weight: 400;
+        font-size: smaller;
+        color: #343a40;
+        line-height: 1.4;
+      }
+      .tag {
+        display: inline-block;
+        padding: 7px 20px;
+        border-radius: 5px;
+        margin: 3px;
+        font-size: 14px;
+        color: white;
+      }
+      .blue {
+        background-color: #007bff;
+      }
+      .darkblue {
+        background-color: #0056b3;
+      }
+      .yellow {
+        background-color: #ffc107;
+        color: black;
+      }
+      .lightblue {
+        background-color: #17a2b8;
+      }
+      .purple {
+        background-color: #6f42c1;
+      }
+      .green {
+        background-color: #28a745;
+      }
+      .orange {
+        background-color: #fd7e14;
+      }
+      .red {
+        background-color: #dc3545;
+      }
+      .darkred {
+        background-color: #8b0000;
+      }
+      .darkgray {
+        background-color: #343a40;
+      }
+      .navy {
+        background-color: #001f3f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ------------------------------- HEADER -------------------------------- -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <img class="nav__img" src="./images/ssg_logo.png" alt="ssg_log.png" />
+          <a href="#" class="nav__brand">SSG는 송상근</a>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">Work</a>
+            </li>
+            <li class="nav__item">
+              <a href="#work" class="nav__link">Project</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!-- -------------------------------- HOME --------------------------------- -->
+      <section class="home container section" id="home">
+        <div class="home__data">
+          <div class="home__left">
+            <h1 id="typeit" class="home__title"></h1>
+            <a href="#contact" class="button">Contact</a>
+          </div>
+
+          <div class="home__right">
+            <div class="about__data">
+              <h2 class="about__subtitle">저는 이렇게 답합니다</h2>
+              <p class="about__text">
+                안녕하세요. 개발자 송상근입니다. 주로 React와
+                Javascript/Typescript, Nodejs 를 이용해서 웹과 모바일앱을
+                개발하고 있고, 다양한 프로토콜을 이용한 기기 간 통신 프로그램
+                개발과 데이터 모니터링 시스템 개발에 익숙합니다. 이 외에
+                클라우드 플랫폼을 이용한 인프라 구성에도 관심이 많습니다.
+                <br /><br />
+                교내 창업동아리 활동으로 코딩에 입문하였고, 제어계측공학을
+                전공하면서 임베디드를 배웠습니다. 현업에서는 임베디드뿐만 아니라
+                웹 개발과 연구과제 수행까지 다양한 영역을 넘나들며 기술적 역량을
+                넓혀왔습니다. 이후 창업을 통해 단독으로 프로젝트를 기획하고
+                개발하며 배포하는 전 과정을 주도하는 경험도 하였습니다.
+                <br /><br />
+                팀과 회사 공동의 목표를 향해 나아가는 진취적인 분위기 속에서
+                주도적으로 기여하는 경험과 성장하는 기회를 찾고 있습니다. 😊🔥
+                <!-- 주도적으로 문제를 찾아 해결하고, 능동적으로 팀과 커뮤니케이션 하면서 즐겁고 효율적인 개발을 하려고 합니다. 개인이 주도적이면 팀 뿐 아니라 회사가 전체가 진취적이게 된다고 생각합니다. -->
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- <img
+          class="home__img"
+          src="./images/cat.gif"
+          alt="프로필 이미지"
+        /> -->
+      </section>
+
+      <!-- -------------------------------- ABOUT -------------------------------- -->
+      <section class="about section bg-grey-1" id="about">
+        <h2 class="section__title">About</h2>
+
+        <div class="about__container container">
+          <div class="about__img">
+            <!-- <img src="./images/about/about.jpg" alt="" /> -->
+            <img src="./images/cat.gif" alt="" />
+          </div>
+          <div>
+            <h2
+              class="skills__subtitle"
+              style="border-bottom: 2px solid #333; padding-bottom: 5px"
+            >
+              Education
+            </h2>
+            <div class="skills__data">
+              <ul>
+                <li style="margin: 10px 0">
+                  <span>2020.08</span> 부경대학교 제어계측공학과 졸업
+                </li>
+                <li style="margin: 10px 0">
+                  <span>2020.10</span> 부경대학교 IoT전문가 양성과정 수료
+                </li>
+                <li>정보처리기사 TOEIC835</li>
+              </ul>
+            </div>
+            <h2
+              class="skills__subtitle"
+              style="border-bottom: 2px solid #333; padding-bottom: 5px"
+            >
+              Career
+            </h2>
+            <div class="skills__data">
+              <ul>
+                <!-- <li><span style="">2023.08 ~ 2024.11 유에이엠랩스 대표</span></li> -->
+                <li style="margin: 10px 0">
+                  2023.08 ~ 2024.11 유에이엠랩스 대표
+                </li>
+                <li style="margin: 10px 0">
+                  2021.02 ~ 2023.08 케이아이씨텍 서울연구소 연구원
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2 class="skills__subtitle">Language</h2>
+            <div class="skills__data">
+              <div class="skills__names">
+                <span class="tag blue">C</span>
+                <span class="tag darkblue">Python</span>
+                <span class="tag yellow">JavaScript</span>
+                <span class="tag blue">TypeScript</span>
+              </div>
+            </div>
+            <h2 class="skills__subtitle">Web/App</h2>
+            <div class="skills__data">
+              <div class="skills__names">
+                <span class="tag lightblue">React</span>
+                <span class="tag lightblue">React Native</span>
+                <span class="tag purple">Redux</span>
+                <span class="tag green">NodeJS</span>
+                <span class="tag green">Express</span>
+              </div>
+            </div>
+            <h2 class="skills__subtitle">DevOps</h2>
+            <div class="skills__data">
+              <div class="skills__names">
+                <span class="tag blue">Docker</span>
+                <span class="tag orange">AWS</span>
+                <span class="tag red">Git</span>
+                <span class="tag darkblue">GithubActions</span>
+                <span class="tag darkred">TravisCI</span>
+              </div>
+            </div>
+            <h2 class="skills__subtitle">Embedded</h2>
+            <div class="skills__data">
+              <div class="skills__names">
+                <span class="tag darkgray">Embedded Linux</span>
+                <span class="tag darkblue">ATmega</span>
+                <span class="tag navy">STM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------- SKILLS -------------------------------- -->
+      <section class="skills section" id="skills">
+        <h2 class="section__title">Work Experience</h2>
+
+        <div class="skills__container container">
+          <div>
+            <div class="company__header">
+              <img
+                class="company__icon"
+                src="images/company/uamlabs-logo.png"
+                alt=""
+              />
+              <h2
+                class="skills__subtitle"
+                style="border-bottom: 2px solid #333; padding-bottom: 5px"
+              >
+                2023.08 ~ 2024.11 유에이엠랩스 대표
+              </h2>
+            </div>
+            <div class="skills__data">
+              <ul>
+                <!-- <li><span style="">2023.08 ~ 2024.11 유에이엠랩스 대표</span></li> -->
+                <!-- <li class="company">2023.08 ~ 2024.11 유에이엠랩스 대표</li> -->
+                <li class="project">
+                  &#9989;환기설비 테스트베드 운영 시스템 개발
+                </li>
+                <li class="projectDescription">
+                  &#9702;한국건설기술연구원 테스트베드 내 공조기와 실내환경
+                  데이터를 모니터링하고 관리하는 시스템 개발
+                </li>
+                <li class="projectDescription">
+                  &#9702;실내환경 데이터를 모니터링하고 관리하는 시스템 개발
+                </li>
+                <li class="projectDescription projectStack">
+                  ▌기술스택: Python, Javascript, React, Redux, Express,
+                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                </li>
+                <li class="project">
+                  &#9989;자동차 주행 정보 모니터링 앱 개발
+                </li>
+                <li class="projectDescription">
+                  &#9702;자동차의 주행 정보와 각종 상태를 실시간으로
+                  모니터링하고, 내 차의 소모품 관리 기능을 제공하는 앱을 개발
+                </li>
+                <li class="projectDescription projectStack">
+                  ▌기술스택: Python, Javascript, React, Redux, Express,
+                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                </li>
+                <li class="project">
+                  &#9989;공동주택용 기계환기설비 운전제어 알고리즘 개발
+                </li>
+                <li class="projectDescription">
+                  &#9702;한국건설기술연구원 연구 일부를 용역 개발, 수집한 센서
+                  데이터로 학습을 시켜 머신러닝 모델을 만들고 Co2를 예측하여
+                  공조기를 자동제어하는 알고리즘 개발
+                </li>
+                <li class="projectDescription projectStack">
+                  ▌기술스택: Python, Javascript, React, Redux, Express,
+                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                </li>
+                <li class="project">
+                  &#9989;디퓨저 장치 테스트 자동화 프로그램 개발
+                </li>
+                <li class="projectDescription">
+                  &#9702;퓨저 출하 전 테스트 자동화를 위한 프로그램 개발
+                </li>
+                <li class="projectDescription projectStack">
+                  ▌기술스택: Python, Javascript, React, Redux, Express,
+                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="company__header">
+              <img
+                class="company__icon"
+                src="images/company/kictech-logo.png"
+                alt=""
+                style="border: 1px solid #cecdcd"
+              />
+              <h2
+                class="skills__subtitle"
+                style="border-bottom: 2px solid #333; padding-bottom: 5px"
+              >
+                2021.02 ~ 2023.08 케이아이씨텍 서울연구소 연구원
+              </h2>
+            </div>
+            <div class="skills__data">
+              <ul>
+                <!-- <li><span style="">2023.08 ~ 2024.11 유에이엠랩스 대표</span></li> -->
+                <!-- <li class="company">2023.08 ~ 2024.11 유에이엠랩스 대표</li> -->
+                <li class="project">
+                  &#9989;환기설비 테스트베드 운영 시스템 개발
+                </li>
+                <li class="projectDescription">
+                  &#9702;한국건설기술연구원 테스트베드 내 공조기와 실내환경
+                  데이터를 모니터링하고 관리하는 시스템 개발
+                </li>
+                <li class="projectDescription">
+                  &#9702;실내환경 데이터를 모니터링하고 관리하는 시스템 개발
+                </li>
+                <li class="projectDescription projectStack">
+                  ▌기술스택: Python, Javascript, React, Redux, Express,
+                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                </li>
+                <li class="project">
+                  &#9989;자동차 주행 정보 모니터링 앱 개발
+                </li>
+                <li class="projectDescription">
+                  &#9702;자동차의 주행 정보와 각종 상태를 실시간으로
+                  모니터링하고, 내 차의 소모품 관리 기능을 제공하는 앱을 개발
+                </li>
+                <li class="projectDescription projectStack">
+                  ▌기술스택: Python, Javascript, React, Redux, Express,
+                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                </li>
+                <li class="project">
+                  &#9989;공동주택용 기계환기설비 운전제어 알고리즘 개발
+                </li>
+                <li class="projectDescription">
+                  &#9702;한국건설기술연구원 연구 일부를 용역 개발, 수집한 센서
+                  데이터로 학습을 시켜 머신러닝 모델을 만들고 Co2를 예측하여
+                  공조기를 자동제어하는 알고리즘 개발
+                </li>
+                <li class="projectDescription projectStack">
+                  ▌기술스택: Python, Javascript, React, Redux, Express,
+                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                </li>
+                <li class="project">
+                  &#9989;디퓨저 장치 테스트 자동화 프로그램 개발
+                </li>
+                <li class="projectDescription">
+                  &#9702;퓨저 출하 전 테스트 자동화를 위한 프로그램 개발
+                </li>
+                <li class="projectDescription projectStack">
+                  ▌기술스택: Python, Javascript, React, Redux, Express,
+                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                </li>
+
+                <!-- <li class="project"> ▌환기설비 테스트베드 운영 시스템 개발</li>
+                <li class="projectDescription"> 한국건설기술연구원 테스트베드 내 공조기와 실내환경 데이터를 모니터링하고 관리하는 시스템 개발</li>
+                <li class="project"> ▌자동차 주행 정보 모니터링 앱 개발</li>
+                <li class="projectDescription"> 자동차의 주행 정보와 각종 상태를 실시간으로 모니터링하고, 내 차의 소모품 관리 기능을 제공하는 앱을 개발</li>
+                <li class="project"> ▌공동주택용 기계환기설비 운전제어 알고리즘 개발</li>
+                <li class="projectDescription"> 한국건설기술연구원 연구 일부를 용역 개발, 수집한 센서 데이터로 학습을 시켜 머신러닝 모델을 만들고 Co2를 예측하여 공조기를 자동제어하는 알고리즘 개발
+                </li>
+                <li class="project"> ▌디퓨저 장치 테스트 자동화 프로그램 개발 </li>
+                <li class="projectDescription"> 디퓨저 출하 전 테스트 자동화를 위한 프로그램 개발</li> -->
+                <!-- <li class="company">2021.02 ~ 2023.08 케이아이씨텍 서울연구소 연구원</li>
+                <li class="project"> ▌AI 기반 스마트하우징 플랫폼 및 서비스 기술 개발 (국토부-산업부 연구개발 과제)</li>
+                <li class="projectDescription"> 다양한 이기종 프로토콜의 센서들을 설치·연동 및 데이터 취합을 위한 바인딩 프로그램과 AI 학습 데이터 제공을 위한 데이터 전처리 및 정제와 API 개발</li>
+                <li class="project"> ▌VLAN 기반 망 구축 기술과 인필 IoT 기기 개발 (중기부 연구개발 과제)</li>
+                <li class="projectDescription">홈 IoT 보안망 구축 및 주택 인필(조립식 천장·벽·바닥) 내장형 IoT 기기 실장 기술 연구에 참여하여 센서 모듈 연동 펌웨어 개발과 네트워크 장치 테스트 및 성능 평가</li>
+                <li class="project"> ▌아파트 세대 내 네트워크 장치를 자동 설정하고 모니터링하는 PVS 시스템 개발 (PVS : Provisioning Service)</li>
+                <li class="projectDescription"> 아파트 세대 내 설치된 Router와 AP를 원격으로 자동 설정하고, 상태 값들을 웹으로 모니터링 하는 시스템을 개발</li>
+                <li class="project"> ▌IoT 기반 해양정보제공 시스템</li>
+                <li class="projectDescription"> 선박의 상태 및 위험 정보를 감지 센서를 통해 육상 센터로 전송하고, 관제센터에서 이를 실시간으로 모니터링하는 시스템을 개발</li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- -------------------------------- WORK --------------------------------- -->
+
+      <section class="work section bg-grey-1" id="work">
+        <h2 class="section__title">Project</h2>
+        <div class="work__container container">
+          <div class="work__item">
+            <a class="work__link" href="#" data-modal="screens/kict.html">
+              <img
+                class="work__img"
+                src="images/work/project1-tn.png"
+                alt="환기설비 테스트베드 운영 시스템"
+              />
+              <div class="work__overlay">
+                <p>환기설비 테스트베드 운영 시스템</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="work__item">
+            <a class="work__link" href="#" data-modal="screens/obd.html">
+              <img
+                class="work__img"
+                src="images/work/project2-tn.png"
+                alt="자동차 주행 정보 모니터링 앱"
+              />
+              <div class="work__overlay">
+                <p>자동차 주행 정보 모니터링 앱</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="work__item">
+            <a
+              class="work__link"
+              href="#"
+              data-modal="screens/smartHousing.html"
+            >
+              <img
+                class="work__img"
+                src="images/work/project3-tn.png"
+                alt="AI기반 스마트하우징 기술 개발"
+              />
+              <div class="work__overlay">
+                <p>AI기반 스마트하우징 기술 개발</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="work__item">
+            <a class="work__link" href="#" data-modal="screens/carnavi.html">
+              <img
+                class="work__img"
+                src="images/work/project4-tn.png"
+                alt="IoT기반 해양 정보 제공 시스템"
+              />
+              <div class="work__overlay">
+                <p>IoT기반 해양 정보 제공 시스템</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="work__item">
+            <a class="work__link" href="#" data-modal="screens/pvs.html">
+              <img
+                class="work__img"
+                src="images/work/proejct5-tn.png"
+                alt="PVS(Provisioning Service)"
+              />
+              <div class="work__overlay">
+                <p>PVS(Provisioning System)</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal -->
+      <div class="modal" id="modal">
+        <div class="modal__content">
+          <iframe src="" id="modal-iframe" frameborder="0"></iframe>
+          <button class="modal__close">&times;</button>
+        </div>
+      </div>
+
+      <!-- ------------------------------- CONTACT ------------------------------- -->
+      <section class="contact section" id="contact">
+        <h2 class="section__title">Contact</h2>
+
+        <div class="contact__container container">
+          <form
+            id="contactForm"
+            class="contact__form"
+            action="https://formspree.io/f/mbljkqgv"
+            method="POST"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="이메일"
+              class="contact__input"
+              required
+            />
+            <textarea
+              name="message"
+              id=""
+              cols="0"
+              rows="10"
+              class="contact__input"
+              placeholder="내용"
+              required
+            ></textarea>
+            <input
+              type="submit"
+              value="보내기"
+              class="contact__button button"
+            />
+          </form>
+        </div>
+        <div class="contact__info">
+          <p>📞 010 9341 5993</p>
+          <p>✉️ uamlabs@gmail.com</p>
+        </div>
+      </section>
+      <button class="floating-button" id="floating-button">
+        <p class="floating-button-text" id="floating-button-text">↑</p>
+        <!-- <i class="fa-solid fa-arrow-up floating-button-icon"></i> -->
+      </button>
+    </main>
+
+    <!-- ------------------------------- FOOTER -------------------------------- -->
+    <footer class="footer">
+      <p class="footer__title">SSG</p>
+      <div class="footer__social"></div>
+      <p class="footer__copy">Copyright &copy; 2025 SSG All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #1f2937; /* 어두운 배경 */
+  color: #ffffff; /* 텍스트 흰색 */
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.left-panel {
+  width: 64%; /* 왼쪽 섹션 */
+  overflow-y: auto;
+  background-color: #2a3648; /* 약간 밝은 배경 */
+  padding: 20px;
+}
+
+.portfolio-item {
+  margin-bottom: 20px;
+}
+
+.portfolio-item img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.right-panel {
+  width: 30%; /* 오른쪽 섹션 */
+  position: fixed; /* 고정 */
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 40px;
+  background-color: #121826; /* 고정 섹션 배경 */
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
+}
+
+.right-panel h1 {
+  font-size: 2rem;
+  color: #f7f6f2; /* 강조 텍스트 */
+  border-bottom: 2px solid #696866;
+  padding-bottom: 10px;
+}
+
+.right-panel h2 {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  color: #fffffd;
+}
+
+.right-panel p {
+  font-size: 1rem;
+  margin: 15px 0;
+}
+
+/* 프로젝트 정보 */
+.project-info {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #242444; /* 정보 섹션 배경 */
+  border-radius: 8px;
+}
+
+.project-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-info ul li {
+  font-size: 0.95rem;
+  margin: 8px 0;
+}
+
+.project-info ul li strong {
+  color: #82b1ff; /* 하이라이트 */
+}
+
+/* .right-panel ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.right-panel ul li {
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+.right-panel ul li strong {
+  color: #264653;
+} */
+
+/* .right-panel h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.right-panel p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.right-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.right-panel li {
+  margin-bottom: 10px;
+} */
+
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* 세로로 정렬 */
+    height: auto; /* 전체 높이 제한 해제 */
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 90%; /* 전체 폭 차지 */
+    position: static; /* 고정 해제 */
+    height: auto; /* 콘텐츠 높이에 맞춤 */
+    box-shadow: none; /* 그림자 제거 */
+  }
+
+  .right-panel {
+    order: -1; /* 순서를 앞으로 */
+    padding: 20px; /* 패딩 줄임 */
+  }
+
+  .left-panel {
+    order: 1; /* 순서를 뒤로 */
+    margin-bottom: 20px; /* 패널 간 간격 추가 */
+  }
+
+  .right-panel h1 {
+    font-size: 20px; /* 제목 크기 조정 */
+  }
+}

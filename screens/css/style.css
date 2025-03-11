@@ -1,0 +1,62 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #2a3648; /* 어두운 배경 */
+  color: #ffffff; /* 텍스트 흰색 */
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: auto;
+}
+
+.left-panel {
+  width: 100%; /* 왼쪽 섹션 */
+  /* overflow-y: auto; */
+  padding: 20px;
+}
+
+.portfolio-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.portfolio-item img {
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* 세로로 정렬 */
+    height: auto; /* 전체 높이 제한 해제 */
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 90%; /* 전체 폭 차지 */
+    position: static; /* 고정 해제 */
+    height: auto; /* 콘텐츠 높이에 맞춤 */
+    box-shadow: none; /* 그림자 제거 */
+  }
+
+  .right-panel {
+    order: -1; /* 순서를 앞으로 */
+    padding: 20px; /* 패딩 줄임 */
+  }
+
+  .left-panel {
+    order: 1; /* 순서를 뒤로 */
+    margin-bottom: 20px; /* 패널 간 간격 추가 */
+  }
+
+  .right-panel h1 {
+    font-size: 20px; /* 제목 크기 조정 */
+  }
+}
