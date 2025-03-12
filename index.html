@@ -13,10 +13,11 @@
     <script src="src/main.js" defer></script>
 
     <!-- ---------------------------- Font Awesome ----------------------------- -->
-    <script
-      src="https://kit.fontawesome.com/45976df4cd.js"
+
+    <!-- <script
+      src="https://kit.fontawesome.com/d9ba6d956f.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
 
     <!-- ---------------------------- ScrollReveal ----------------------------- -->
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -24,7 +25,7 @@
     <!-- ------------------------------- Typeit -------------------------------- -->
     <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
 
-    <title>SSG 소개 페이지</title>
+    <title>SSG 포트폴리오 페이지</title>
 
     <!-- 메타 설명 태그 -->
     <meta name="description" content="안녕하세요. 개발자 송상근 입니다." />
@@ -44,9 +45,9 @@
     />
     <meta
       property="og:image"
-      content="https://yourwebsite.com/images/og-image.jpg"
+      content="https://ssg-portfolio.site/images/og-image.jpg"
     />
-    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:url" content="https://ssg-portfolio.site" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter 카드 메타태그 -->
@@ -93,14 +94,15 @@
         padding-left: 20px;
         font-weight: 500;
         color: #343a40;
-        line-height: 1.4;
+        line-height: 1.5;
       }
       .projectStack {
         padding-left: 20px;
         font-weight: 400;
         font-size: smaller;
         color: #343a40;
-        line-height: 1.4;
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
       }
       .tag {
         display: inline-block;
@@ -192,7 +194,9 @@
 
           <div class="home__right">
             <div class="about__data">
-              <h2 class="about__subtitle">저는 이렇게 답합니다</h2>
+              <h2 class="about__subtitle">
+                함께 버그도 잡고, 성과도 잡고, 성장도 잡을 팀을 찾습니다!
+              </h2>
               <p class="about__text">
                 안녕하세요. 개발자 송상근입니다. 주로 React와
                 Javascript/Typescript, Nodejs 를 이용해서 웹과 모바일앱을
@@ -227,7 +231,8 @@
         <div class="about__container container">
           <div class="about__img">
             <!-- <img src="./images/about/about.jpg" alt="" /> -->
-            <img src="./images/cat.gif" alt="" />
+            <!-- <img src="./images/cat.gif" alt="" /> -->
+            <img src="./images/profile_resize.png" alt="" />
           </div>
           <div>
             <h2
@@ -335,12 +340,11 @@
                 </li>
                 <li class="projectDescription">
                   &#9702;한국건설기술연구원 테스트베드 내 공조기와 실내환경
-                  데이터를 모니터링하고 관리하는 시스템 개발
-                </li>
-                <li class="projectDescription">
-                  &#9702;실내환경 데이터를 모니터링하고 관리하는 시스템 개발
+                  데이터를 모니터링하고 관리하는 시스템을 개발하였습니다.
                 </li>
                 <li class="projectDescription projectStack">
+                  ▌개발기간: 2024.04 ~ 2024.09 / 개발인원: 1명
+                  <br />
                   ▌기술스택: Python, Javascript, React, Redux, Express,
                   Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
                 </li>
@@ -349,33 +353,39 @@
                 </li>
                 <li class="projectDescription">
                   &#9702;자동차의 주행 정보와 각종 상태를 실시간으로
-                  모니터링하고, 내 차의 소모품 관리 기능을 제공하는 앱을 개발
+                  모니터링하고, 내 차의 소모품 관리 기능을 제공하는 앱을
+                  개발하였습니다.
                 </li>
                 <li class="projectDescription projectStack">
-                  ▌기술스택: Python, Javascript, React, Redux, Express,
-                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                  ▌개발기간: 2024.10 ~ 2024.12 / 개발인원: 1명
+                  <br />
+                  ▌기술스택: React Native, Redux, RxJS, AsyncStorage, python
+                  Asyncio, CAN, MQTT, RaspberryPi
                 </li>
                 <li class="project">
                   &#9989;공동주택용 기계환기설비 운전제어 알고리즘 개발
                 </li>
                 <li class="projectDescription">
                   &#9702;한국건설기술연구원 연구 일부를 용역 개발, 수집한 센서
-                  데이터로 학습을 시켜 머신러닝 모델을 만들고 Co2를 예측하여
+                  데이터로 학습을 시켜 머신러닝 모델을 만들고 Co2변화를 예측하여
                   공조기를 자동제어하는 알고리즘 개발
                 </li>
                 <li class="projectDescription projectStack">
-                  ▌기술스택: Python, Javascript, React, Redux, Express,
-                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                  ▌개발기간: 2023.10 ~ 2024.02 / 개발인원: 2명
+                  <br />
+                  ▌기술스택: Python, Docker, Tensorflow, Sklearn, Pandas, Numpy,
+                  Matplot
                 </li>
                 <li class="project">
                   &#9989;디퓨저 장치 테스트 자동화 프로그램 개발
                 </li>
                 <li class="projectDescription">
-                  &#9702;퓨저 출하 전 테스트 자동화를 위한 프로그램 개발
+                  &#9702;제품 출하 전 테스트 자동화를 위한 프로그램 개발
                 </li>
                 <li class="projectDescription projectStack">
-                  ▌기술스택: Python, Javascript, React, Redux, Express,
-                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                  ▌개발기간: 2023.11 ~ 2023.11 / 개발인원: 1명
+                  <br />
+                  ▌기술스택: Python, Flask, ModbusRTU
                 </li>
               </ul>
             </div>
@@ -400,51 +410,61 @@
                 <!-- <li><span style="">2023.08 ~ 2024.11 유에이엠랩스 대표</span></li> -->
                 <!-- <li class="company">2023.08 ~ 2024.11 유에이엠랩스 대표</li> -->
                 <li class="project">
-                  &#9989;환기설비 테스트베드 운영 시스템 개발
+                  &#9989;AI기반 스마트하우징 플랫폼 및 서비스 기술 개발
                 </li>
                 <li class="projectDescription">
-                  &#9702;한국건설기술연구원 테스트베드 내 공조기와 실내환경
-                  데이터를 모니터링하고 관리하는 시스템 개발
-                </li>
-                <li class="projectDescription">
-                  &#9702;실내환경 데이터를 모니터링하고 관리하는 시스템 개발
+                  &#9702;국토부-산업부의 연구개발 과제이며, 주거생활을 지원하고
+                  효율적인 유지관리를 위한 AI기반의 스마트하우징 융합서비스 기술
+                  개발에 참여하였습니다.
                 </li>
                 <li class="projectDescription projectStack">
-                  ▌기술스택: Python, Javascript, React, Redux, Express,
-                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                  ▌개발기간: 2021.03 ~ 2023.08 인원: 3명
+                  <br />
+                  ▌기술스택: Docker, Linux, Python, SQLite, MongoDB, MQTT, TLS,
+                  HomeAssistant
                 </li>
                 <li class="project">
-                  &#9989;자동차 주행 정보 모니터링 앱 개발
+                  &#9989;VLAN기반 망 구축 기술과 인필 IoT기기 개발
                 </li>
                 <li class="projectDescription">
-                  &#9702;자동차의 주행 정보와 각종 상태를 실시간으로
-                  모니터링하고, 내 차의 소모품 관리 기능을 제공하는 앱을 개발
+                  &#9702;중기부의 연구개발 과제이며, VLAN기반 홈 IoT보안망 구축
+                  및 주택 인필(조립식 천장 벽 바닥) 내장형 IoT기기 실장 기술
+                  연구에 참여하였습니다.
                 </li>
                 <li class="projectDescription projectStack">
-                  ▌기술스택: Python, Javascript, React, Redux, Express,
-                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                  ▌개발기간: 2021.03 ~ 2022.12 / 개발인원: 3명
+                  <br />
+                  ▌기술스택: Python, C, ESP32, Raspberry Pi, socket, MQTT, IEEE
+                  802.1Q VLAN
+                </li>
+                <li class="project">&#9989;IoT기반 해양정보 제공 시스템</li>
+                <li class="projectDescription">
+                  &#9702;선박의 상태 및 위험 정보를 감지 센서를 통해 육상 센터로
+                  전송하고, 관제센터에서 이를 실시간으로 모니터링하는 시스템을
+                  개발하였습니다.
+                </li>
+                <li class="projectDescription projectStack">
+                  ▌개발기간: 2022.02 ~ 2022.06 / 개발인원: 3명
+                  <br />
+                  ▌기술스택: Nginx, Nodejs, Express, Pug, Mongoose, Python,
+                  websocket
                 </li>
                 <li class="project">
-                  &#9989;공동주택용 기계환기설비 운전제어 알고리즘 개발
+                  &#9989;아파트 세대 내 네트워크 장치를 자동 설정하고
+                  모니터링하는 PVS 개발
+                  <br />
+                  (PVS: Provisioning Service)
                 </li>
                 <li class="projectDescription">
-                  &#9702;한국건설기술연구원 연구 일부를 용역 개발, 수집한 센서
-                  데이터로 학습을 시켜 머신러닝 모델을 만들고 Co2를 예측하여
-                  공조기를 자동제어하는 알고리즘 개발
+                  &#9702;아파트 세대 내 설치된 Router와 AP를 원격으로 자동
+                  설정하고, 상태 값들을 웹으로 모니터링 하는 시스템을
+                  개발하였습니다.
                 </li>
                 <li class="projectDescription projectStack">
-                  ▌기술스택: Python, Javascript, React, Redux, Express,
-                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
-                </li>
-                <li class="project">
-                  &#9989;디퓨저 장치 테스트 자동화 프로그램 개발
-                </li>
-                <li class="projectDescription">
-                  &#9702;퓨저 출하 전 테스트 자동화를 위한 프로그램 개발
-                </li>
-                <li class="projectDescription projectStack">
-                  ▌기술스택: Python, Javascript, React, Redux, Express,
-                  Mongoose, AWS, Docker, GithubActions, Websocket, Modbus
+                  ▌개발기간: 2021.02 ~ 2021.12 / 개발인원: 3명
+                  <br />
+                  ▌기술스택: Embedded Linux, C, Nginx, Nodejs, Express, Pug,
+                  Mongoose, Python, MQTT
                 </li>
 
                 <!-- <li class="project"> ▌환기설비 테스트베드 운영 시스템 개발</li>

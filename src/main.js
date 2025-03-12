@@ -61,7 +61,7 @@ const scrollReveal = ScrollReveal({
   origin: 'top',
   distance: '60px',
   duration: 2000,
-  delay: 200,
+  delay: 100,
   //     reset: true
 });
 // 빠른 로딩
@@ -69,12 +69,15 @@ scrollReveal.reveal(
   '.home__data, .about__img, .skills__subtitle, .skills__text, .company__icon',
   {},
 );
-scrollReveal.reveal('.home__img, .about__data, .skills__img', { delay: 400 });
-scrollReveal.reveal('.home__social-icon', { interval: 200 });
+scrollReveal.reveal('.home__img, .about__data, .skills__img', { delay: 100 });
+scrollReveal.reveal('.home__social-icon', { interval: 100 });
 
-scrollReveal.reveal('.skills__data, .work__link, .contact__input', {
-  interval: 200,
-});
+scrollReveal.reveal(
+  '.skills__data, .work__link, .contact__container, .contact__info',
+  {
+    interval: 200,
+  },
+);
 
 /* -------------------------- Floating Button Click ------------------------- */
 const $floatingButton = document.getElementById('floating-button');
