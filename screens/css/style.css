@@ -59,4 +59,9 @@ body {
   .right-panel h1 {
     font-size: 20px; /* 제목 크기 조정 */
   }
+  .portfolio-item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 }
