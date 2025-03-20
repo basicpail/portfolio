@@ -32,7 +32,7 @@ function handleIntersectionObserver() {
     root: null,
     // 타겟 이미지 접근 전 이미지를 불러오기 위해 rootMargin을 설정했습니다.
     rootMargin: '0px 0px 0px 0px',
-    threshold: 1,
+    threshold: 0.3, // 0.5 화면의 50% 지점에 보이면 콜백함수 실행
   };
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
